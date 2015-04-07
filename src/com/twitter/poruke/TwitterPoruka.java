@@ -77,4 +77,15 @@ public class TwitterPoruka {
 		return "KORISNIK:" + korisnik + " PORUKA:" + poruka;
 	}
 	
+	@Override
+	public boolean equals(Object o) {
+		if (o instanceof TwitterPoruka) {
+			TwitterPoruka tp = (TwitterPoruka) (o);
+			
+			if (korisnik.equals(tp.getKorisnik()) && poruka.equals(tp.getPoruka()))
+				return true;
+		}
+		return false;
+	}
+	
 }
