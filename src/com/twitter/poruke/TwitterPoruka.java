@@ -37,6 +37,8 @@ public class TwitterPoruka {
 	 * 
 	 * @param korisnik
 	 * 				naziv korisnika koji postavlja tvit
+	 * @throws java.lang.RuntimeException 
+	 * 				ako je uneti naziv korisnika null ili prazan String
 	 */
 	public void setKorisnik(String korisnik) {
 		if (korisnik == null || korisnik.equals(""))
@@ -63,10 +65,12 @@ public class TwitterPoruka {
 	 * 
 	 * @param poruka
 	 * 				tekst poruke tvita koji zelimo da unesemo
+	 * @throws java.lang.RuntimeException 
+	 * 				ako je uneta poruka null ili String koji ima vise od 140 karaktera
 	 */
 	public void setPoruka(String poruka) {
 		if (poruka == null || poruka.length() > 140)
-			throw new RuntimeException("Poruka mora biti uneta i mora imati najvise 140 znakova");
+			throw new RuntimeException("Poruka mora biti uneta i mora imati najvise 140 karaktera");
 		this.poruka = poruka;
 	}
 	

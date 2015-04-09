@@ -52,6 +52,8 @@ public class Twitter {
 	 * @param tag
 	 * 			tag koji treba da sadrze sve poruke koje vracamo
 	 * @return trazeni broj poruka koje sadrze trazeni tag
+	 * @throws java.lang.RuntimeException 
+	 * 			ako je uneti tag null ili prazan String
 	 */
 	public TwitterPoruka[] vratiPoruke(int maxBroj, String tag) {
 		if (tag == null || tag.isEmpty())
